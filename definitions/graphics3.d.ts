@@ -11,4 +11,4 @@ declare interface Graphics3D {
     draw(func: (obj: Graphics3DObject) => void): void;
 }
 
-declare const graphics3d: Graphics3D;
+declare const gfx3d: Graphics3D;

@@ -26,6 +26,7 @@ declare class Vector2 {
      * @param y The y coordinate.
      */
     constructor(x: number, y: number);
+    constructor();
 
     x: number;
     y: number;
@@ -39,12 +40,46 @@ declare class Vector3 {
     distanceTo: (pos: Vector3) => number;
 
     constructor(x: number, y: number, z: number);
+    constructor();
     x: number;
     y: number;
     z: number;
 }
 
-type Color = [number, number, number, number];
+declare class Color {
+    asAlpha: (opacity: number) => Color;
+
+    public r: number;
+    public g: number;
+    public b: number;
+    public a: number;
+
+    /**
+     * 
+     * @param r Red (0.0 to 1.0)
+     * @param g Green (0.0 to 1.0)
+     * @param b Blue (0.0 to 1.0)
+     * @param a Opacity (0.0 to 1.0)
+     */
+    constructor(r: number, g: number, b: number, a: number);
+
+    constructor();
+
+    /**
+     * 
+     * @param r Red (0 to 255)
+     * @param g Green (0 to 255)
+     * @param b Blue (0 to 255)
+     * @param a Opacity (0 to 255)
+     */
+    static RGB(r: number, g: number, b: number, a: number | undefined): Color;
+
+    static WHITE: Color;
+    static BLACK: Color;
+    static RED: Color;
+    static GREEN: Color;
+    static BLUE: Color;
+}
 
 declare const enum TextAlignment {
     Left,
@@ -52,25 +87,14 @@ declare const enum TextAlignment {
     Center
 }
 
-declare const enum Font {
-    /**
-     * By default, this is Noto Sans
-     */
-    Smooth,
-    /**
-     * By default, this is Mojangles
-     */
-    Minecraft,
-    MinecraftTen
+declare const enum VerticalAlignment {
+    Top,
+    Bottom,
+    Center
 }
 
-declare interface Graphics2D {
-    drawRect(rect: Rect, color: Color, thickness: number): void;
+declare interface DXGraphics {
     fillRect(rect: Rect, color: Color): void;
-    drawText(rect: Rect, color: Color, text: string, size: number, font: Font, alignment: TextAlignment): void;
-    getTextSize(text: string, size: number, font: Font): Vector2;
-    setClippingRect(rect: Rect): void;
-    restoreClippingRect(): void;
 }
 
-declare const graphics: Graphics2D;
+declare const dx: DXGraphics;
