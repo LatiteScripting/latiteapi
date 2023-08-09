@@ -94,6 +94,7 @@ declare const enum VerticalAlignment {
 }
 
 declare interface DXGraphics {
+    drawRect(rect: Rect, color: Color, thickness: number): void;
     fillRect(rect: Rect, color: Color): void;
 }
 

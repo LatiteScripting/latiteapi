@@ -4,7 +4,12 @@ declare namespace include {
          * The body, if the status code is 200 (OK)
          */ 
         body: Uint8Array,
-        statusCode: number
+        statusCode: number,
+
+        /**
+         * A WinRT error. Undefined if no error
+         */
+        error: string,
     }
 
     interface GetData {
