@@ -36,6 +36,7 @@ declare namespace include {
          * @param data 
          * @param callback 
          */
+        get(url: string, data: GetData, callback: (err: number, resp: HttpResponse) => void): void;
         
         /**
          * Sends a basic POST request to a URL.
