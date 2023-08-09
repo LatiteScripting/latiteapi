@@ -23,7 +23,7 @@ declare const enum MouseButton {
 }
 
 interface ClickEvent extends CancellableEvent {
-    button: MouseButton
+    button: MouseButton;
     isDown: boolean;
     mouseX: number;
     mouseY: number;
@@ -47,6 +47,7 @@ interface ClientEvents {
     "receive-chat": ReceiveChatEvent,
     "send-chat": SendChatEvent,
     "render2d": LatiteEvent,
+    "renderDX": LatiteEvent,
     "key-press": KeyEvent,
     "click": ClickEvent,
     "render3d": LatiteEvent,

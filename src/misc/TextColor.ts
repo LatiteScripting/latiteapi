@@ -1,7 +1,6 @@
-// strict mode is disabled in latiteapi
-(TextColor as any) = {}
+eval("var TextColor = {}");
 
-TextColor.FORMAT_CHAR = "\u00A7";
+TextColor.FORMAT_CHAR = "\xc2\xa7";
 
 TextColor.formatText = function(str: string): string {
     return str.replace("&", TextColor.FORMAT_CHAR);
