@@ -29,6 +29,13 @@ declare namespace include {
          * @param data 
          */
         getSync(url: string, data?: GetData): HttpResponse;
+
+        /**
+         * Sends an async GET request to a URL.
+         * @param url The URL to send the request.
+         * @param data 
+         * @param callback 
+         */
         
         /**
          * Sends a basic POST request to a URL.
@@ -36,5 +43,13 @@ declare namespace include {
          * @param data 
          */
         postSync(url: string, data?: PostData): HttpResponse;
+
+        /**
+         * Sends an async POST request to a URL.
+         * @param url The URL to send the request.
+         * @param data 
+         * @param callback 
+         */
+        //post(url: string, data: GetData, callback: (err: number, resp: HttpResponse) => void): void;
     }
 }
