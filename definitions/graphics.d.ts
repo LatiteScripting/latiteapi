@@ -1,6 +1,13 @@
+/**
+ * A class representing a rectangle on the screen.
+ * @member left The x coordinate of the top-left point.
+ * @member top The y coordinate of the top-left point.
+ * @member right The x coordinate of the bottom-right point.
+ * @member bottom The y coordinate of the bottom-right point.
+ */
 declare class Rect {
     /**
-     * A class representing a rectangle on the screen.
+     * 
      * @param left The x coordinate of the top-left point.
      * @param top The y coordinate of the top-left point.
      * @param right The x coordinate of the bottom-right point.
@@ -12,6 +19,9 @@ declare class Rect {
     top: number;
     right: number;
     bottom: number;
+
+    getWidth(): number;
+    getHeight(): number;
 }
 
 declare class Vector2 {

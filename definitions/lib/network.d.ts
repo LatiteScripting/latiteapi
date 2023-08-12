@@ -1,25 +1,25 @@
 declare namespace include {
-    interface HttpResponse {
+    export interface HttpResponse {
         /**
          * The body, if the status code is 200 (OK)
          */ 
-        body: Uint8Array,
+        body: Buffer,
         statusCode: number,
 
         /**
-         * A WinRT error. Undefined if no error
+         * The http client error message
          */
-        error: string,
+        error?: string,
     }
 
     interface GetData {
         contentType?: string,
-        content?: Uint8Array,
+        content?: Buffer,
     }
 
     interface PostData {
         contentType?: string,
-        content: Uint8Array,
+        content: Buffer,
     }
 
     interface Network {

@@ -1,11 +1,11 @@
 declare namespace include {
-    interface Filesystem {
+    export interface Filesystem {
         /**
          * Reads a file asynchronously.
          * @param path The path to read from.
          * @param callback 
          */
-        read(path: string, callback: (err: number, content: Uint8Array) => void): void;
+        read(path: string, callback: (err: number, content: Buffer) => void): void;
         
         /**
          * 
@@ -13,19 +13,19 @@ declare namespace include {
          * @param data The data to write (see util.stringToBuffer to convert a string to a buffer)
          * @param callback 
          */
-        write(path: string, data: Uint8Array, callback: (err: number) => void): void;
+        write(path: string, data: Buffer, callback: (err: number) => void): void;
 
         /**
          * Reads a file from the path specified.
          * @param path The relative path from the script.
          */
-        readSync(path: string): Uint8Array;
+        readSync(path: string): Buffer;
         /**
          * Writes a file to the path specified.
          * @param path The relative path from the script.
          * @param data The data to write.
          */
-        writeSync(path: string, data: Uint8Array): void;
+        writeSync(path: string, data: Buffer): void;
 
         /**
          * Checks if a file or a directory exists

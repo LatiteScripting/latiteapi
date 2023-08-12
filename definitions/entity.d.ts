@@ -20,10 +20,11 @@ declare class Entity {
     getRot(): Vector2;
 
     /**
-     * Get the dimension.
+     * Get the dimension name.
      * for example, "Overworld"
      */
-    getDimension(): string;
+    @deprecated
+    getDimensionName(): string;
 }
 
 declare class Player extends Entity {

@@ -9,5 +9,5 @@ Color.prototype.asAlpha = function(opacity: number) {
 }
 
 Color.RGB = function(r, g, b, a) {
-    return new Color(r / 255, g / 255, b / 255, a ? a / 255 : 1);
+    return new Color(r / 255, g / 255, b / 255, a ? (a / 255) : 1);
 }
