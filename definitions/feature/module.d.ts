@@ -21,10 +21,10 @@ interface ModuleEvents {
 }
 
 declare class Module {
-    name: string
-    displayName: string
-    description: string
-    key: KeyCode
+    readonly name: string
+    readonly displayName: string
+    readonly description: string
+    readonly key: KeyCode
     
     /**
      * IDs for script modules are always 255.
@@ -65,4 +65,28 @@ declare class Module {
      * Check if the module is blocked.
      */
     isBlocked(): boolean;
+
+    /**
+     * Gets the settings of the module.
+     */
+    getSettings(): Setting[];
+
+    /**
+     * Adds a setting.
+     * @param name The internal name
+     * @param displayName The name that shows in the menu
+     * @param description A short description of what the setting does
+     */
+    addBoolSetting(name: string, displayName: string, description: string): Setting;
+
+    /**
+     * Adds a setting.
+     * @param name The internal name
+     * @param displayName The name that shows in the menu
+     * @param description A short description of what the setting does
+     * @param min The minimum value
+     * @param max The maximum value
+     * @param interval The precision of the setting
+     */
+    addNumberSetting(name: string, displayName: string, description: string, min: number, max: number, interval: number): Setting;
 }

@@ -4,7 +4,7 @@ Uint8Array.prototype.readInt32 = function(idx) {
     return new Int32Array(arrayBuf)[0];
 }
 
-Uint8Array.prototype.readInt64AsFloat64 = function(idx) {
+Uint8Array.prototype.readInt64AsFloat = function(idx) {
     let lowOrder = this.readInt32(idx);
     let highOrder = this.readInt32(idx + 4);
 

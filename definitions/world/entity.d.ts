@@ -23,7 +23,6 @@ declare class Entity {
      * Get the dimension name.
      * for example, "Overworld"
      */
-    @deprecated
     getDimensionName(): string;
 }
 
