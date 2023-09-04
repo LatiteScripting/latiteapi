@@ -83,10 +83,15 @@ interface Latite {
      */
     getModuleManager() : ModuleManager;
 
-     /**
-     * The Latite Client version. Example: v1.4.0 (release), b1.4.0 (beta)
+    /**
+     * Gets the command manager. Use this to register commands.
      */
-     version: string;
+    getCommandManager(): CommandManager;
+
+     /**
+     * The Latite Client version. Example: "v2.0.0"
+     */
+    readonly version: string;
 }
 
 declare const client: Latite;
