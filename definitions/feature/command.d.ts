@@ -1,6 +1,6 @@
 interface CommandEvents {
     /**
-     * 
+     * Called on any command being used.
      * @param label The beginning of the command line (for example, `'test'` in '.test 123')
      * @param args The list of arguments of the command line (for example, `['123']` in '.test 123')
      * @returns Whether the command usage is successful or not (return `false` if the user misused the command)
