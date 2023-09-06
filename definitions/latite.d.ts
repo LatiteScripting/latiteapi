@@ -52,8 +52,10 @@ interface ClientEvents {
     "leave-game": LatiteEvent,
     /**
     * Called on every chat message received.
+    * 
+    * Listener:
     * ```ts
-    * listener = {
+    * {
     *   message: string,
     *   sender: string,
     *   xuid: string
@@ -63,8 +65,10 @@ interface ClientEvents {
     "receive-chat": ReceiveChatEvent,
     /**
     * Called on every chat message sent. Cancellable - setting cancel to true will make the game not see the event.
+    * 
+    * Listener:
     * ```ts
-    * listener = {
+    * {
     *   message: string,
     *   cancel: boolean
     * }
@@ -81,8 +85,10 @@ interface ClientEvents {
     "renderDX": LatiteEvent,
     /**
     * Called on every keyboard input. Cancellable - setting cancel to true will make the game not see the event.
+    * 
+    * Listener:
     * ```ts
-    * listener = {
+    * {
     *   isDown: boolean,
     *   keyCode: KeyCode,
     *   keyAsChar: string,
@@ -93,8 +99,10 @@ interface ClientEvents {
     "key-press": KeyEvent,
     /**
     * Called on every (non-move) mouse input. Cancellable - setting cancel to true will make the game not see the event.
+    * 
+    * Listener:
     * ```ts
-    * listener = {
+    * {
     *   button: MouseButton,
     *   isDown: boolean,
     *   mouseX: number,
@@ -114,8 +122,10 @@ interface ClientEvents {
     "app-suspended": LatiteEvent,
     /**
     * Called on any script being loaded.
+    * 
+    * Listener:
     * ```ts
-    * listener = {
+    * {
     *   scriptName: string,
     *   scriptVersion: string,
     *   scriptAuthor: string
@@ -125,8 +135,10 @@ interface ClientEvents {
     "load-script": ScriptEvent,
     /**
     * Called on any script being unloaded.
+    * 
+    * Listener:
     * ```ts
-    * listener = {
+    * {
     *   scriptName: string,
     *   scriptVersion: string,
     *   scriptAuthor: string
