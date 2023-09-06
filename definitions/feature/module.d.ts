@@ -4,7 +4,7 @@ interface ModuleEvents {
     */
     "enable": () => void,
     /**
-    * Called any module being disabled.
+    * Called on any module being disabled.
     */
     "disable": () => void,
     /**
