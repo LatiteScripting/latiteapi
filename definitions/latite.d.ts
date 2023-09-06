@@ -64,7 +64,7 @@ interface ClientEvents {
     */
     "receive-chat": ReceiveChatEvent,
     /**
-    * Called on every chat message sent. Cancellable - setting cancel to true will make the game not see the event.
+    * Called on every chat message sent. Cancellable - setting `cancel` to true will make the game not see the event.
     * 
     * Listener:
     * ```ts
@@ -84,7 +84,7 @@ interface ClientEvents {
     */
     "renderDX": LatiteEvent,
     /**
-    * Called on every keyboard input. Cancellable - setting cancel to true will make the game not see the event.
+    * Called on every keyboard input. Cancellable - setting `cancel` to true will make the game not see the event.
     * 
     * Listener:
     * ```ts
@@ -98,7 +98,7 @@ interface ClientEvents {
     */
     "key-press": KeyEvent,
     /**
-    * Called on every (non-move) mouse input. Cancellable - setting cancel to true will make the game not see the event.
+    * Called on every (non-move) mouse input. Cancellable - setting `cancel` to true will make the game not see the event.
     * 
     * Listener:
     * ```ts
