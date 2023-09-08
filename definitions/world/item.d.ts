@@ -41,7 +41,7 @@ declare class ItemStack {
     getPickupTime(): number;
 
     /**
-     * Gets the damage of thee item (e.g. if a sword was used once, it would have a damage value of 1)
+     * Gets the damage of the item (e.g. if a sword was used once, it would have a damage value of 1)
      */
     getDamage(): number;
 }
