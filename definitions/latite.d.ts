@@ -42,20 +42,109 @@ interface ScriptEvent extends LatiteEvent {
 }
 
 interface ClientEvents {
+    /**
+    * Called on every tick.
+    */
     "world-tick": LatiteEvent,
+    /**
+    * Called on the user leaving a world.
+    */
     "leave-game": LatiteEvent,
+    /**
+    * Called on every chat message received.
+    * 
+    * Listener:
+    * ```ts
+    * {
+    *   message: string,
+    *   sender: string,
+    *   xuid: string
+    * }
+    * ```
+    */
     "receive-chat": ReceiveChatEvent,
+    /**
+    * Called on every chat message sent. Cancellable - setting `cancel` to true will make the game not see the event.
+    * 
+    * Listener:
+    * ```ts
+    * {
+    *   message: string,
+    *   cancel: boolean
+    * }
+    * ```
+    */
     "send-chat": SendChatEvent,
+    /**
+    * Called on every frame; use this for 2D rendering.
+    */
     "render2d": LatiteEvent,
+    /**
+    * Called on every frame; use this for DirectX rendering.
+    */
     "renderDX": LatiteEvent,
+    /**
+    * Called on every keyboard input. Cancellable - setting `cancel` to true will make the game not see the event.
+    * 
+    * Listener:
+    * ```ts
+    * {
+    *   isDown: boolean,
+    *   keyCode: KeyCode,
+    *   keyAsChar: string,
+    *   cancel: boolean
+    * }
+    * ```
+    */
     "key-press": KeyEvent,
+    /**
+    * Called on every (non-move) mouse input. Cancellable - setting `cancel` to true will make the game not see the event.
+    * 
+    * Listener:
+    * ```ts
+    * {
+    *   button: MouseButton,
+    *   isDown: boolean,
+    *   mouseX: number,
+    *   mouseY: number,
+    *   cancel: boolean
+    * }
+    * ```
+    */
     "click": ClickEvent,
+    /**
+    * Called on every frame; use this for 3D rendering.
+    */
     "render3d": LatiteEvent,
     /**
-     * Whenever the game gets minimized or closed.
-     */
+    * Called on the game being minimized/closed.
+    */
     "app-suspended": LatiteEvent,
+    /**
+    * Called on any script being loaded.
+    * 
+    * Listener:
+    * ```ts
+    * {
+    *   scriptName: string,
+    *   scriptVersion: string,
+    *   scriptAuthor: string
+    * }
+    * ```
+    */
     "load-script": ScriptEvent,
+    /**
+    * Called on any script being unloaded.
+    * 
+    * Listener:
+    * ```ts
+    * {
+    *   scriptName: string,
+    *   scriptVersion: string,
+    *   scriptAuthor: string
+    * }
+    * ```
+    */
     "unload-script": ScriptEvent,
 }
 

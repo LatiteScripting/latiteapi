@@ -1,22 +1,33 @@
 interface ModuleEvents {
+    /**
+    * Called on any module being enabled.
+    */
     "enable": () => void,
+    /**
+    * Called on any module being disabled.
+    */
     "disable": () => void,
-    "get-hold-to-toggle": () => boolean,
+    /**
+    * Called on every frame. Return a bool to set the toggle form of the module - `true` makes it a hold module, like player list; `false`, standard toggle form.
+    */
+    "get-hold-to-toggle": () => boolean, // I had no idea how to write this
     
-     /**
-      * Only available in HUD modules.
-      * @param isPreview If it's a preview in the main menu (when module settings are extended.)
-      * @param isEditor If it's in the HUD editor where you move modules around.
-      */
+    /**
+    * Called on every frame; use this to render something arbitrary.
+    * @note Only available in HUD modules.
+    * @param isPreview If it's a preview in the main menu (when module settings are extended.)
+    * @param isEditor If it's in the HUD editor where you move modules around.
+    */
     "render": (isPreview: boolean, isEditor: boolean) => void,
-     /**
-     * Only available in HUD modules.
-     */
+    /**
+    * Only available in HUD modules.
+    */
     //"shouldRender": () => boolean;
     
     /**
-     * Only available in text modules.
-     */
+    * Called on every frame; use this to render text. Return a string to render it on the next frame.
+    * @note Only available in text modules.
+    */
     "text": (isPreview: boolean, isEditor: boolean) => string;
 }
 
