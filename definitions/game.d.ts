@@ -27,14 +27,14 @@ interface Game {
     /**
      * Gets the server you are connected to. This will return null if you are not in a server.
      */
-    getConnectedServer(): string | null;
+    getServer(): string | null;
 
     /**
      * Gets the featured server name you are connected to. This will return null if you are not in a featured server.
      * 
      * Featured server examples: "The Hive" "CubeCraft" "InPvP" "Mineplex"
      */
-    getConnectedFeaturedServer(): string | null;
+    getFeaturedServer(): string | null;
 
     /**
      * Get the current world that you're in.

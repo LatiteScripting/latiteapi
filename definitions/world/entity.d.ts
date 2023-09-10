@@ -54,9 +54,32 @@ declare class Entity {
 
     /**
      * Makes your player attack the entity. Only works if you have operator
+     * 
+     * This function is restricted - meaning it will only work on LocalPlayer or if you have OP
      * @throws
      */
     attack(): void;
+
+    /**
+     * Gets the health of the entity.
+     * 
+     * This function is restricted - meaning it will only work on LocalPlayer or if you have OP
+     */
+    getHealth(): number;
+
+    /**
+     * Gets the hunger of the entity.
+     * 
+     * This function is restricted - meaning it will only work on LocalPlayer or if you have OP
+     */
+    getHunger(): number;
+
+    /**
+     * Gets the saturation of the entity.
+     * 
+     * This function is restricted - meaning it will only work on LocalPlayer or if you have OP
+     */
+    getSaturation(): number;
 }
 
 declare class Player extends Entity {
@@ -69,6 +92,20 @@ declare class Player extends Entity {
      * Gets the player's Xbox User ID.
      */
     getXUID(): string;
+
+    /**
+     * Gets the item being held.
+     * 
+     * This function is restricted - meaning it will only work on LocalPlayer or if you have OP
+     */
+    getHoldingItem(): ItemStack;
+
+    /**
+     * Gets the slot of the item being held.
+     * 
+     * This function is restricted - meaning it will only work on LocalPlayer or if you have OP
+     */
+    getSelectedSlot(): number;
 }
 
 declare const enum LookingAt {

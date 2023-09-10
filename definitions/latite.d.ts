@@ -9,9 +9,34 @@ interface SendChatEvent extends CancellableEvent {
     message: string;
 }
 
-interface ReceiveChatEvent extends LatiteEvent {
+type MessageType = 
+    "raw" |
+    "chat" |
+    "translation" |
+    "popup" |
+    "jukebox" |
+    "tip" |
+    "system_message" |
+    "whisper" |
+    "announcement" |
+    "text_object" |
+    "object_whisper";
+
+interface MessageEvent extends CancellableEvent {
+    type: MessageType;
+    /**
+     * Whether or not the message type is a chat message.
+     */
+    isChat: boolean;
     message: string;
+
+    /**
+     * The sender of the message (if applicable)
+     */
     sender: string;
+    /**
+     * The Xbox User ID of the sender (if applicable)
+     */
     xuid: string;
 }
 
@@ -41,28 +66,51 @@ interface ScriptEvent extends LatiteEvent {
     scriptAuthor: string
 }
 
+type TitleType =
+    "clear" |
+    "reset" |
+    "title" |
+    "subtitle" |
+    "actionbar" |
+    "titleraw" |
+    "subtitleraw" |
+    "actionbarraw" |
+    "times";
+
+interface TitleEvent extends CancellableEvent {
+    type: TitleType;
+    text: string;
+}
+
 interface ClientEvents {
     /**
     * Called on every tick.
     */
     "world-tick": LatiteEvent,
     /**
+     * 
+     */
+    "join-game": LatiteEvent,
+
+    /**
     * Called on the user leaving a world.
     */
     "leave-game": LatiteEvent,
     /**
-    * Called on every chat message received.
+    * Called on every message received.
     * 
     * Listener:
     * ```ts
     * {
-    *   message: string,
-    *   sender: string,
-    *   xuid: string
+    *   type: MessageType;
+    *   isChat: boolean;
+    *   message: string;
+    *   sender: string;
+    *   xuid: string;
     * }
     * ```
     */
-    "receive-chat": ReceiveChatEvent,
+    "receive-chat": MessageEvent,
     /**
     * Called on every chat message sent. Cancellable - setting `cancel` to true will make the game not see the event.
     * 
@@ -146,6 +194,19 @@ interface ClientEvents {
     * ```
     */
     "unload-script": ScriptEvent,
+
+    /**
+    * Called whenever you receive a title from the server.
+    * 
+    * Listener:
+    * ```ts
+    * {
+    *   type: TitleType,
+    *   text: string
+    * }
+    * ```
+    */
+    "title": TitleEvent;
 }
 
 interface Latite {
@@ -170,16 +231,16 @@ interface Latite {
     /**
      * Gets the module manager. Use this to register modules.
      */
-    getModuleManager() : ModuleManager;
+    getModuleManager(): ModuleManager;
 
     /**
      * Gets the command manager. Use this to register commands.
      */
     getCommandManager(): CommandManager;
 
-     /**
-     * The Latite Client version. Example: "v2.0.0"
-     */
+    /**
+    * The Latite Client version. Example: "v2.0.0"
+    */
     readonly version: string;
 }
 
