@@ -87,8 +87,9 @@ declare class Module {
      * @param name The internal name
      * @param displayName The name that shows in the menu
      * @param description A short description of what the setting does
+     * @param defVal The default value
      */
-    addBoolSetting(name: string, displayName: string, description: string): Setting;
+    addBoolSetting(name: string, displayName: string, description: string, defVal: boolean): Setting;
 
     /**
      * Adds a setting.
@@ -98,6 +99,25 @@ declare class Module {
      * @param min The minimum value
      * @param max The maximum value
      * @param interval The precision of the setting
+     * @param defVal The default value
      */
-    addNumberSetting(name: string, displayName: string, description: string, min: number, max: number, interval: number): Setting;
+    addNumberSetting(name: string, displayName: string, description: string, min: number, max: number, interval: number, defVal: number): Setting;
+
+    /**
+     Adds a setting.
+     * @param name The internal name
+     * @param displayName The name that shows in the menu
+     * @param description A short description of what the setting does
+     * @param defVal The default value
+     */
+    addKeySetting(name: string, displayName: string, description: string, defVal: KeyCode): Setting;
+
+    /**
+     Adds a setting.
+     * @param name The internal name
+     * @param displayName The name that shows in the menu
+     * @param description A short description of what the setting does
+     * @param defVal The default value
+     */
+    addTextSetting(name: string, displayName: string, description: string, defVal: string): Setting;
 }
