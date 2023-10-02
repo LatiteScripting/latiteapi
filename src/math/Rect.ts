@@ -5,3 +5,5 @@ Rect.prototype.getWidth = function() {
 Rect.prototype.getHeight = function() {
     return this.bottom - this.top;
 }
+
+Rect.prototype.getWidth

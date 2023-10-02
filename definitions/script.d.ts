@@ -15,6 +15,7 @@ declare var script: Script;
 interface EngineLibraries {
     "filesystem": include.Filesystem
     "network": include.Network
+    "clipboard": include.Clipboard
 }
 
 /**

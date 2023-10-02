@@ -3,7 +3,7 @@ interface CommandEvents {
      * Called on any command being used.
      * @param label The beginning of the command line (for example, `'test'` in '.test 123')
      * @param args The list of arguments of the command line (for example, `['123']` in '.test 123')
-     * @param commandLine The command line (for example, `'123 test'` in '.test 123 test')
+     * @param commandLine The command line (for example, `'.test 123 test'` in '.test 123 test')
      * @returns Whether the command usage is successful or not (return `false` if the user misused the command)
      */
     "execute" : (label: string, args: string[], commandLine: string) => boolean;

@@ -1,4 +1,5 @@
 declare interface Uint8Array {
+    readInt16(idx: number): number;
     readInt32(idx: number): number;
     readInt64AsFloat(idx: number): number;
     
