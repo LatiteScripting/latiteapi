@@ -14,7 +14,7 @@ declare var script: Script;
 
 interface EngineLibraries {
     "filesystem": include.Filesystem
-    "network": include.Network
+    "http": include.HTTP
     "clipboard": include.Clipboard
 }
 
@@ -24,6 +24,13 @@ interface EngineLibraries {
  * @throws Invalid filepath or Non-OK HTTP/HTTPS error code
  */
 declare function require<K extends keyof EngineLibraries>(path: K): EngineLibraries[K];
+
+
+/**
+ * @deprecated use require("http")
+ */
+declare function require(path: "network"): include.HTTP
+
 /**
  * Load a specified script from filesystem or web.
  * @param path The filepath, HTTP or HTTPS link to the JS file.

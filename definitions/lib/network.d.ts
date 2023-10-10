@@ -22,7 +22,7 @@ declare namespace include {
         content: Buffer,
     }
 
-    interface Network {
+    interface HTTP {
         /**
          * Sends a basic GET request to a URL.
          * @param url The URL to send the request.
