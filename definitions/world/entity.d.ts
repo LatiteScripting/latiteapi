@@ -80,6 +80,25 @@ declare class Entity {
      * This function is restricted - meaning it will only work on LocalPlayer or if you have OP
      */
     getSaturation(): number;
+
+    /**
+     * Gets the value of a MoLang variable. Returns `null` if the variable was not found.
+     * @param name The variable name. Example: `variable.is_sneaking`
+     */
+    getMolangVariable(name: MolangVariables): MolangVariable;
+
+    /**
+     * Gets the value of a MoLang variable. Returns `null` if the variable was not found.
+     * @param name The variable name. Example: `variable.is_sneaking`
+     */
+    getMolangVariable(name: string): MolangVariable | null;
+
+    /**
+     * [Experimental] sets a MoLang variable's value. Returns `null` if unsuccessful and the number that was set if it was successful.
+     * @param name The variable name. Example: `variable.is_sneaking`
+     * @param value The variable's new value.
+     */
+    setMolangVariable(name: string, value: number): number | null;
 }
 
 declare class Player extends Entity {
