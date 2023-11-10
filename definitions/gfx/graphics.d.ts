@@ -137,6 +137,16 @@ declare interface Graphics {
      * @param verticalAlignment The vertical alignment
      */
     drawTextFull(area: Rect, text: string, size: number, color: Color, alignment: TextAlignment, verticalAlignment: VerticalAlignment): void;
+
+    /**
+     * Draws a texture.
+     * @param texture The texture to draw
+     * @param pos The position to draw the texture
+     * @param sizeX The size of the texture in pixels
+     * @param sizeY The size of the texture in pixels
+     * @param color The overlay color of the texture (defaults to white)
+     */
+    drawTexture(texture: Texture, pos: Vector2, sizeX: number, sizeY: number, color?: Color): void;
 }
 
 declare const graphics: Graphics;

@@ -15,6 +15,7 @@
 
 /// <reference path="./gfx/graphics.d.ts" />
 /// <reference path="./gfx/graphics3.d.ts" />
+/// <reference path="./gfx/Texture.d.ts" />
 
 
 /// <reference path="./feature/command.d.ts" />
