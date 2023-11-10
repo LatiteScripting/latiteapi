@@ -9,6 +9,3 @@ import "./misc/TextColor"
 import "./misc/Buffer"
 
 import "./util/Util"
-
-var myV = game.getLocalPlayer().getMolangVariable("variable.is_blocking");
-myV.number;
