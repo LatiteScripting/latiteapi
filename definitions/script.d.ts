@@ -53,5 +53,3 @@ interface ScriptModule {
      */
     exports: {}
 }
-
-declare const module: ScriptModule;
