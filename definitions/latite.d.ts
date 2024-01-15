@@ -82,6 +82,10 @@ interface TitleEvent extends CancellableEvent {
     text: string;
 }
 
+interface TextInputEvent extends CancellableEvent {
+    characters: string;
+}
+
 interface ClientEvents {
     /**
     * Called on every tick.
@@ -207,6 +211,18 @@ interface ClientEvents {
     * ```
     */
     "title": TitleEvent;
+
+    /**
+     * Called whenever text input is received.
+     * 
+     * ```ts
+     * Listener:
+     * {
+     *   characters: string
+     * }
+     * ```
+     */
+    "text-input": TextInputEvent;
 }
 
 interface Latite {
