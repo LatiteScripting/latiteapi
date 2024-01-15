@@ -52,6 +52,13 @@ interface Game {
      * Get the mouse position.
      */
     getMousePos(): Vector2;
+
+    /**
+     * Gets the user's input setting, usually a key code, for example `"front"` returns `KeyCode.W` by default.
+     * 
+     * If this function returns 0, either the key is set to nothing or the specified name was not found.
+     */
+    getInputBinding(name: string): number;
 }
 
 declare const game: Game;
