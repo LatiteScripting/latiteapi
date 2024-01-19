@@ -5,11 +5,7 @@ interface ModuleManager {
      */
     registerModule(mod: Module): void;
 
-    /**
-     * Removes a module from the client.
-     * @param mod The module to unregister. Must be a script module.
-     */
-    deregisterModule(mod: Module): void;
+    //deregisterModule(mod: Module): void;
 
     /**
      * Gets a module by the specified InternalName.

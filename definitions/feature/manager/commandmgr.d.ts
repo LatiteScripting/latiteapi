@@ -10,9 +10,5 @@ declare class CommandManager {
      */
     registerCommand(cmd: Command): void;
 
-    /**
-     * Removes a command from the client.
-     * @param mod The command to deregister. Must be a script command.
-     */
-    deregisterCommand(cmd: Command): void;
+    //deregisterCommand(cmd: Command): void;
 }
