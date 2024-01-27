@@ -6,7 +6,7 @@ interface CancellableEvent extends LatiteEvent {
 }
 
 interface SendChatEvent extends CancellableEvent {
-    message: string;
+    readonly message: string;
 }
 
 type MessageType = 
@@ -23,21 +23,21 @@ type MessageType =
     "object_whisper";
 
 interface MessageEvent extends CancellableEvent {
-    type: MessageType;
+    readonly type: MessageType;
     /**
      * Whether or not the message type is a chat message.
      */
-    isChat: boolean;
-    message: string;
+    readonly isChat: boolean;
+    readonly message: string;
 
     /**
      * The sender of the message (if applicable)
      */
-    sender: string;
+    readonly sender: string;
     /**
      * The Xbox User ID of the sender (if applicable)
      */
-    xuid: string;
+    readonly xuid: string;
 }
 
 declare const enum MouseButton {
@@ -48,22 +48,22 @@ declare const enum MouseButton {
 }
 
 interface ClickEvent extends CancellableEvent {
-    button: MouseButton;
-    isDown: boolean;
-    mouseX: number;
-    mouseY: number;
+    readonly button: MouseButton;
+    readonly isDown: boolean;
+    readonly mouseX: number;
+    readonly mouseY: number;
 }
 
 interface KeyEvent extends CancellableEvent {
-    isDown: boolean;
-    keyCode: KeyCode; // like 0x43
-    keyAsChar: string; // like 'C'
+    readonly isDown: boolean;
+    readonly keyCode: KeyCode; // like 0x43
+    readonly keyAsChar: string; // like 'C'
 }
 
 interface ScriptEvent extends LatiteEvent {
-    scriptName: string,
-    scriptVersion: string,
-    scriptAuthor: string
+    readonly scriptName: string,
+    readonly scriptVersion: string,
+    readonly scriptAuthor: string
 }
 
 type TitleType =
@@ -78,12 +78,12 @@ type TitleType =
     "times";
 
 interface TitleEvent extends CancellableEvent {
-    type: TitleType;
-    text: string;
+    readonly type: TitleType;
+    readonly text: string;
 }
 
 interface TextInputEvent extends CancellableEvent {
-    characters: string;
+    readonly characters: string;
 }
 
 interface ClientEvents {
