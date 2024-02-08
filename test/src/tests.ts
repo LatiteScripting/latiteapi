@@ -83,7 +83,7 @@ LatiteUnit.test({
     },
 
     molangTest() {
-        let attackTime = getn(game.getLocalPlayer()).getMolangVariable("variable.attack_time");
+        let attackTime = getn(game.getLocalPlayer()).getMolangVariable("variable.attack_time").number;
         assert(attackTime >= 0.0 && attackTime <= 1.0);
     },
 
