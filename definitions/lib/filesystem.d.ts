@@ -23,7 +23,7 @@ declare namespace include {
         /**
          * Writes a file to the path specified.
          * @param path The relative path from the script.
-         * @param data The data to write. For example, `util.bufferToString("hello")`
+         * @param data The data to write. For example, `util.stringToBuffer("hello")`
          */
         write(path: string, data: Buffer): void;
 

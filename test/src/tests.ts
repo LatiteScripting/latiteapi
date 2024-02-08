@@ -5,6 +5,11 @@ let receivedTestMessage = false;
 const LATITE_TEST_MESSAGE_COMMAND = "______LatiteTestMessageCmd";
 let receivedTestMessage2 = false;
 
+const LATITE_FILE_TEST = "latite\nunit\ntest";
+
+const fs = require("filesystem")
+const clip = require("clipboard")
+
 LatiteUnit.test({
     testLocalPlayer() {
         getn(game.getLocalPlayer());
@@ -80,6 +85,45 @@ LatiteUnit.test({
     molangTest() {
         let attackTime = getn(game.getLocalPlayer()).getMolangVariable("variable.attack_time");
         assert(attackTime >= 0.0 && attackTime <= 1.0);
+    },
+
+    writeReadFile() {
+        let file = fs.write("testWriteReadFile", util.stringToBuffer(LATITE_FILE_TEST));
+        assert(util.bufferToString(fs.read("testWriteReadFile")) == LATITE_FILE_TEST, "file contents unexpected");
+    },
+
+    appendFile() {
+        fs.write("testAppendFile", new Uint8Array(0));
+
+        let file = fs.append("testAppendFile", util.stringToBuffer(LATITE_FILE_TEST));
+        assert(util.bufferToString(fs.read("testAppendFile")) == LATITE_FILE_TEST, "file contents unexpected");
+    },
+
+    writeReadFileAsync_part1() {
+        let file = fs.writeAsync("testWriteReadFile", util.stringToBuffer(LATITE_FILE_TEST), (err) => {
+            LatiteUnit.test({
+                writeReadFileAsync_part2() {
+                    assert(err == 0, "failed to write file");
+
+                    fs.readAsync("testWriteReadFile", (err, content) => {
+                        LatiteUnit.test({
+                            writeReadFileAsync_part3() {
+                                assert(err == 0, "failed to read file");
+
+                                assert(util.bufferToString(content) == LATITE_FILE_TEST, "file contents unexpected")
+                            }
+                        })
+                    })
+                    
+                }
+            })
+            
+        });
+    },
+
+    clipboard() {
+        clip.set("LatiteClipboardTest");
+        assert(clip.get() == "LatiteClipboardTest");
     }
 })
 

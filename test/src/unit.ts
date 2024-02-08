@@ -28,7 +28,7 @@ export namespace LatiteUnit {
         for (let unitTest = 0; unitTest < Object.keys(funcs).length; unitTest++) {
             let key = Object.keys(funcs)[unitTest];
             let maxTest = Object.keys(funcs).length;
-            let str = `(${unitTest}/${maxTest}) ${key}:`;
+            let str = `(${unitTest + 1}/${maxTest}) ${key}:`;
 
             try {
                 funcs[key]();
@@ -36,9 +36,9 @@ export namespace LatiteUnit {
                 success(`${str} PASSED`)
             } catch (e) {
                 if (e instanceof AssertionError) {
-                    error(`${str} FAILED - ${e.message}`);
+                    error(`${str} FAILED${e.message.length > 0 ? " - " + e.message : "" }`);
                 } else {
-                    error2(e);
+                    error(`${str} FAILED - ${e}`);
                 }
             }
         }
