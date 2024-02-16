@@ -88,19 +88,19 @@ LatiteUnit.test({
     },
 
     writeReadFile() {
-        let file = fs.write("testWriteReadFile", util.stringToBuffer(LATITE_FILE_TEST));
+        fs.write("testWriteReadFile", util.stringToBuffer(LATITE_FILE_TEST));
         assert(util.bufferToString(fs.read("testWriteReadFile")) == LATITE_FILE_TEST, "file contents unexpected");
     },
 
     appendFile() {
         fs.write("testAppendFile", new Uint8Array(0));
 
-        let file = fs.append("testAppendFile", util.stringToBuffer(LATITE_FILE_TEST));
+        fs.append("testAppendFile", util.stringToBuffer(LATITE_FILE_TEST));
         assert(util.bufferToString(fs.read("testAppendFile")) == LATITE_FILE_TEST, "file contents unexpected");
     },
 
     writeReadFileAsync_part1() {
-        let file = fs.writeAsync("testWriteReadFile", util.stringToBuffer(LATITE_FILE_TEST), (err) => {
+        fs.writeAsync("testWriteReadFile", util.stringToBuffer(LATITE_FILE_TEST), (err) => {
             LatiteUnit.test({
                 writeReadFileAsync_part2() {
                     assert(err == 0, "failed to write file");

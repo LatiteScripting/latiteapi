@@ -17,6 +17,8 @@
 /// <reference path="./gfx/graphics3.d.ts" />
 /// <reference path="./gfx/Texture.d.ts" />
 
+/// <reference path="./molang/Variable.d.ts" />
+/// <reference path="./molang/Variables.d.ts" />
 
 /// <reference path="./feature/command.d.ts" />
 /// <reference path="./feature/module.d.ts" />

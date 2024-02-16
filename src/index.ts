@@ -9,3 +9,10 @@ import "./misc/TextColor"
 import "./misc/Buffer"
 
 import "./util/Util"
+
+script = {
+    name: "",
+    author: "",
+    description: "",
+    log: clientMessage
+}
