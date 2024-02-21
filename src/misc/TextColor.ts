@@ -1,4 +1,5 @@
-eval("var TextColor = {}");
+//@ts-ignore
+TextColor = {};
 
 TextColor.FORMAT_CHAR = "\u00A7";
 

@@ -20,6 +20,8 @@
 /// <reference path="./molang/Variable.d.ts" />
 /// <reference path="./molang/Variables.d.ts" />
 
+/// <reference path="./native/NativeModule.d.ts" />
+
 /// <reference path="./feature/command.d.ts" />
 /// <reference path="./feature/module.d.ts" />
 /// <reference path="./feature/setting.d.ts" />

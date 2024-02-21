@@ -3,7 +3,7 @@ import combine from "rollup-plugin-combine";
 import commonjs from "rollup-plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 
-export default [{
+export default {
   input: "./out/index.js",
   plugins: [match(), combine()],
   onwarn: function (message) {
@@ -14,5 +14,4 @@ export default [{
     format: "es",
   },
   plugins: [typescript()],
-},
-];
+};
