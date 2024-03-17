@@ -1,4 +1,5 @@
 /// <reference path="./script.d.ts" />
+/// <reference path="./plugin.d.ts" />
 /// <reference path="./game.d.ts" />
 /// <reference path="./latite.d.ts" />
 

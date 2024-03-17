@@ -37,6 +37,11 @@ interface Game {
     getFeaturedServer(): string | null;
 
     /**
+     * Gets the port of the server you're connected to. If you are not in a server, it returns 0.
+     */
+    getPort(): number;
+
+    /**
      * Get the current world that you're in.
      */
     getWorld() : World | null;
