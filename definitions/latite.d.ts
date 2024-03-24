@@ -223,6 +223,11 @@ interface ClientEvents {
      * ```
      */
     "text-input": TextInputEvent;
+
+    /**
+     * Called whenever the player joins or changes worlds (does not fire when the player leaves the world).
+     */
+    "world-change": LatiteEvent;
 }
 
 interface Latite {
