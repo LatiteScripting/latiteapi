@@ -1,5 +1,10 @@
 declare interface World {
     /**
+     * Returns `true` if in a world, returns `false` if not. You will only be able to use the World methods if you are in a world.
+     */
+    exists(): boolean;
+
+    /**
      * The saved world name.
      */
     getName(): string;
@@ -23,3 +28,5 @@ declare interface World {
      */
     getEntityCount(): number;
 }
+
+declare const world: World;

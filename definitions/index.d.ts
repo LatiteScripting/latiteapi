@@ -3,6 +3,8 @@
 /// <reference path="./game.d.ts" />
 /// <reference path="./latite.d.ts" />
 
+/// <reference path="./world/block.d.ts" />
+/// <reference path="./world/dimension.d.ts" />
 /// <reference path="./world/world.d.ts" />
 /// <reference path="./world/item.d.ts" />
 /// <reference path="./world/entity.d.ts" />
