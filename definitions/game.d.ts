@@ -42,9 +42,17 @@ interface Game {
     getPort(): number;
 
     /**
-     * Get the current world that you're in.
+     * @deprecated use `world`
+     * Get the World object.
      */
-    getWorld() : World | null;
+    getWorld() : World;
+
+
+    /**
+     * @deprecated use `dimension`
+     * Get the Dimension object.
+     */
+    getDimension(): Dimension;
 
     /**
      * Get whether you are in a UI screen
