@@ -18,6 +18,17 @@ declare class Entity {
      * @throws
      */
     getPosition(): Vector3;
+
+    /**
+     * Get the interpolated position. Use this in the context of rendering based on entity position.
+     */
+    getPositionInterpolated(): Vector3;
+
+    /**
+     * Get the position the entity was in the last tick.
+     */
+    getPreviousPosition(): Vector3;
+
     /**
      * Get the rotation. Note that this will fail if you dont have permission to get the rotation
      * @throws

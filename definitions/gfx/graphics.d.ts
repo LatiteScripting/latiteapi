@@ -118,6 +118,11 @@ declare interface Graphics {
     drawRect(rect: Rect, color: Color, thickness: number): void;
     fillRect(rect: Rect, color: Color): void;
 
+    getTextSize(text: string, textSize: number): Vector2;
+
+    setClippingRect(rect: Rect): void;
+    restoreClippingRect(): void;
+
     /**
      * Draws text on the position specified
      * @param pos The position to draw the text
