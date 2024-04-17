@@ -225,9 +225,14 @@ interface ClientEvents {
     "text-input": TextInputEvent;
 
     /**
-     * Called whenever the player joins or changes worlds (does not fire when the player leaves the world).
+     * Called whenever the server transfers a player into another server.
      */
-    "world-change": LatiteEvent;
+    "transfer": LatiteEvent;
+
+    /**
+     * Calls whenever the player goes into a different dimension.
+     */
+    "change-dimension": LatiteEvent;
 }
 
 interface Latite {

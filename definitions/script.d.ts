@@ -5,21 +5,20 @@ interface EngineLibraries {
 }
 
 /**
- * Prints to chat.
- * @param contents The contents to log.
+ * Adds chat message(s) to the chat.
+ * @param contents The contents to send to chat. They will be separated into different chat messages.
  */
-declare function clientMessage(... contents: any[]): void;
+declare function clientMessage(... messages: any[]): void;
 
 /**
  * Load a specified library.
- * @param path The filepath, HTTP or HTTPS link to the JS file.
- * @throws Invalid filepath or Non-OK HTTP/HTTPS error code
+ * @param library The Latite Scripting engine built-in library.
  */
-declare function require<K extends keyof EngineLibraries>(path: K): EngineLibraries[K];
+declare function require<K extends keyof EngineLibraries>(library: K): EngineLibraries[K];
 
 /**
- * 
- * @param path The path to load the library
+ * Load and run a specified JavaScript module. This returns whatever is in `exports` or `module.exports` of the JavaScript module.
+ * @param path The path to load the JavaScript file.
  */
 declare function require(path: string): any;
 
