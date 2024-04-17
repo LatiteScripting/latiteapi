@@ -42,9 +42,21 @@ declare function setTimeout(func: () => void, timeout: number): number;
  * Calls a function every x milliseconds.
  * @param func The function to call
  * @param timeout The time in milliseconds
- * @returns The Timeout ID
+ * @returns The Interval ID
  */
 declare function setInterval(func: () => void, timeout: number): number;
+
+/**
+ * Cancels a timeout with a specified ID (stops it from executing.) No effect if the id is invalid.
+ * @param timeoutId A valid Timeout ID. It is the return value of the `setTimeout` functions.
+ */
+declare function clearTimeout(timeoutId: number): void;
+
+/**
+ * Cancels an interval with a specified ID (stops it from executing.) No effect if the id is invalid.
+ * @param timeoutId A valid Interval ID. It is the return value of the `setInterval` functions.
+ */
+declare function clearInterval(intervalId: number): void;
 
 interface ScriptModule {
     /**
