@@ -48,13 +48,13 @@ declare function setInterval(func: () => void, timeout: number): number;
 
 /**
  * Cancels a timeout with a specified ID (stops it from executing.) No effect if the id is invalid.
- * @param timeoutId A valid Timeout ID. It is the return value of the `setTimeout` functions.
+ * @param timeoutId A valid Timeout ID. It is the return value of the `setTimeout` function.
  */
 declare function clearTimeout(timeoutId: number): void;
 
 /**
  * Cancels an interval with a specified ID (stops it from executing.) No effect if the id is invalid.
- * @param timeoutId A valid Interval ID. It is the return value of the `setInterval` functions.
+ * @param intervalId A valid Interval ID. It is the return value of the `setInterval` function.
  */
 declare function clearInterval(intervalId: number): void;
 
