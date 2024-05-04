@@ -120,4 +120,13 @@ declare class Module {
      * @param defVal The default value
      */
     addTextSetting(name: string, displayName: string, description: string, defVal: string): Setting;
+
+    /**
+     Adds a setting.
+     * @param name The internal name
+     * @param displayName The name that shows in the menu
+     * @param description A short description of what the setting does
+     * @param defVal The default value
+     */
+     addColorSetting(name: string, displayName: string, description: string, defVal: Color): Setting;
 }
