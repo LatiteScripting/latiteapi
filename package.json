@@ -1,7 +1,7 @@
 {
-  "name": "latite-scripting-template",
-  "version": "1.0.0",
-  "description": "A template for Latite Scripting",
+  "name": "@latitescripting/latiteapi",
+  "version": "2.0.0",
+  "description": "API type definitions for Latite Scripting",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -17,5 +17,21 @@
   },
   "dependencies": {
     "rollup-plugin-commonjs": "^10.1.0"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LatiteScripting/latiteapi.git"
+  },
+  "keywords": [
+    "latite"
+  ],
+  "author": "JayRSky and Plextora",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LatiteScripting/latiteapi/issues"
+  },
+  "homepage": "https://github.com/LatiteScripting/latiteapi#readme"
 }
