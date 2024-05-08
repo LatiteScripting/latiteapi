@@ -1,6 +1,6 @@
 import match from "rollup-plugin-match";
 import combine from "rollup-plugin-combine";
-import commonjs from "rollup-plugin-commonjs";
+import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 
 export default {

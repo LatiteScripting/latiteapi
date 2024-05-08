@@ -9,14 +9,12 @@
   },
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.1.2",
+	"@rollup/plugin-commonjs": "^25.0.7",
     "rollup": "^3.25.3",
     "rollup-plugin-combine": "^2.1.1",
     "rollup-plugin-match": "^1.0.0",
     "tslib": "^2.6.0",
     "typescript": "^5.1.6"
-  },
-  "dependencies": {
-    "rollup-plugin-commonjs": "^10.1.0"
   },
   "directories": {
     "test": "test"
