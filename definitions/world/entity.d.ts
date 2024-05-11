@@ -161,7 +161,7 @@ declare class LocalPlayer extends Player {
     getLookingAt(): LookingAt;
 
     /**
-     * Get the block selected by looking at it.
+     * Get the block selected by looking at it. Will return null if no block is selected.
      */
     getSelectedBlock(): Vector3 | null;
 }

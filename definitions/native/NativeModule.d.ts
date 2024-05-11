@@ -23,9 +23,14 @@ declare class NativeModule {
      * Calls a function.
      * 
      * This method is restricted to prevent cheating.
+     * 
+     * Every argument is passed as a little-endian integer. There may be precision loss when passing in numbers larger than `Number.MAX_SAFE_INTEGER`.
+     * 
+     * Strings passed in will be treated as wstrings (wide strings)
+     * 
      * @param functionName The procedure name.
      * @param returnType The return type that is expected.
-     * @param args Arguments to pass to the function. The maximum arguments is 10.
+     * @param args Arguments to pass to the function. The maximum arguments is 15.
      */
     public call(functionName: string, returnType: NativeType, ...args: any[]): number | undefined;
 }
