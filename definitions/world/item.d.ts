@@ -21,7 +21,7 @@ declare class ItemStack {
      */
     public readonly item: Item | null;
     /**
-     * The aux/data value of the item (not damage) (-32768 to 32767)
+     * The auxiliary/data value of the item (not damage) (-32768 to 32767)
      */
     public readonly aux: number;
 
@@ -31,7 +31,7 @@ declare class ItemStack {
     getDisplayName(): string;
 
     /**
-     * Gets the count of the stack
+     * Gets the number of items in the stack
      */
     getCount(): number;
 

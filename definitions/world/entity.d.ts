@@ -125,17 +125,19 @@ declare class Player extends Entity {
 
     /**
      * Gets the item being held.
-     * 
-     * This function is restricted - meaning it will only work on LocalPlayer or if you have OP
      */
     getHoldingItem(): ItemStack;
 
     /**
      * Gets the slot of the item being held.
-     * 
-     * This function is restricted - meaning it will only work on LocalPlayer or if you have OP
      */
     getSelectedSlot(): number;
+
+    /**
+     * Gets the item at the current inventory slot. Will return null if the specified slot is out of bounds
+     * @param slot The slot number
+     */
+    getItem(slot: number): ItemStack | null;
 }
 
 declare const enum LookingAt {

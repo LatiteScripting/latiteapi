@@ -60,9 +60,9 @@ interface Game {
     isInUI(): boolean;
 
     /**
-     * Get the open screen name
+     * Gets the size of the viewport.
      */
-    getScreen(): string;
+    getScreenSize(): Vector2;
 
     /**
      * Get the mouse position.
