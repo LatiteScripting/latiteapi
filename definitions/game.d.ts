@@ -70,6 +70,16 @@ interface Game {
     getMousePos(): Vector2;
 
     /**
+     * Captures the mouse cursor (hides it and allows the player to look around using the mouse cursor.)
+     */
+    captureCursor(): void;
+
+    /**
+     * Releases the mouse cursor.
+     */
+    releaseCursor(): void;
+
+    /**
      * Gets the user's input setting. Usually a key code; for example, `"forward"` returns `KeyCode.W` by default.
      * 
      * If this function returns 0, either the key is set to nothing or the specified name was not found.
