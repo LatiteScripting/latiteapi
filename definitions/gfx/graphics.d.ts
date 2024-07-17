@@ -115,8 +115,8 @@ declare interface Graphics {
      * @param renderer `"dx"`: uses Direct2D/DirectWrite, `"minecraft":` use the Minecraft renderer
      */
     use(renderer: "dx" | "minecraft"): void;
-    drawRect(rect: Rect, color: Color, thickness: number): void;
-    fillRect(rect: Rect, color: Color): void;
+    drawRect(rect: Rect, color: Color, thickness: number, radius?: number): void;
+    fillRect(rect: Rect, color: Color, radius?: number): void;
 
     getTextSize(text: string, textSize: number): Vector2;
 
