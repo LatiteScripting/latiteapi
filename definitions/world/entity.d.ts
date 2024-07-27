@@ -152,12 +152,6 @@ declare class Player extends Entity {
      * @param slot The slot number
      */
     getItem(slot: number): ItemStack | null;
-
-    /**
-     * Gets an armor slot. Throws an error if the slot is out of bounds
-     * @param slot The armor slot [0-3]
-     */
-    getArmorSlot(slot: number): ItemStack;
 }
 
 declare const enum LookingAt {
