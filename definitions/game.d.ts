@@ -1,6 +1,4 @@
 interface Game {
-    readonly version: string;
-
     /**
      * Sends a chat message.
      * @param msg The message to send.
