@@ -110,6 +110,20 @@ declare class Entity {
      * @param value The variable's new value.
      */
     setMolangVariable(name: string, value: number): number | null;
+
+    /**
+     * Gets a status flag's state in the current entity.
+     * @param type The entity status flag to get
+     */
+    getFlag(flag: number): boolean;
+
+
+    /**
+     * Sets a status flag's state in the current entity.
+     * @param type The entity status flag to get
+     * @param value The new status flag value.
+     */
+    setFlag(flag: number, value: boolean): void;
 }
 
 declare class Player extends Entity {
@@ -138,6 +152,12 @@ declare class Player extends Entity {
      * @param slot The slot number
      */
     getItem(slot: number): ItemStack | null;
+
+    /**
+     * Gets an armor slot. Throws an error if the slot is out of bounds
+     * @param slot The armor slot [0-3]
+     */
+    getArmorSlot(slot: number): ItemStack;
 }
 
 declare const enum LookingAt {

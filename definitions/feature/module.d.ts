@@ -59,7 +59,7 @@ declare class Module {
  */
     constructor(name: string, displayName: string, description: string, key: KeyCode);
 
-    on: <K extends keyof ModuleEvents>(eventName: K, handler: ModuleEvents[K]) => void;
+    on: <K extends keyof ModuleEvents>(eventName: K, handler: ModuleEvents[K]) => Module;
 
     /**
      * Checks if the module is enabled.

@@ -2,6 +2,7 @@
 /// <reference path="./plugin.d.ts" />
 /// <reference path="./game.d.ts" />
 /// <reference path="./latite.d.ts" />
+/// <reference path="./options.d.ts" />
 
 /// <reference path="./world/block.d.ts" />
 /// <reference path="./world/dimension.d.ts" />

@@ -85,6 +85,12 @@ interface Game {
      * If this function returns 0, either the key is set to nothing or the specified name was not found.
      */
     getInputBinding(name: InputBinding): number;
+
+    /**
+     * Gets whether a key is currently held.
+     * @param key Virtual-key code [0-255]
+     */
+    isKeyDown(key: number): boolean;
 }
 
 type InputBinding =

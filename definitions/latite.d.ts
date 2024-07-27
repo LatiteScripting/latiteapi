@@ -237,9 +237,12 @@ interface ClientEvents {
 
 interface Latite {
     /**
-     * Listen to an event.
+     * Listens to a client-side event.
+     * @param eventName The event to listen to
+     * @param listener The event callback
+     * @param priority Positive or negative integer. The priority in which the event listener should have over other events globally. The default is 0. Greater = called first, less = called later. 
      */
-    on<K extends keyof ClientEvents>(eventName: K, listener: (event: ClientEvents[K]) => void): void
+    on<K extends keyof ClientEvents>(eventName: K, listener: (event: ClientEvents[K]) => void, priority?: number): void
 
     /**
      * Shows a Latite toast on the top of the screen.
