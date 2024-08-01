@@ -79,4 +79,7 @@ interface ITextColor {
 	formatText(str: string): string;
 }
 
+/**
+ * @version 2.0.0
+ */
 declare const TextColor: ITextColor;
