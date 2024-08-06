@@ -1,3 +1,6 @@
+/**
+ * @since 2.0.0
+ */
 type MolangVariables =
     "variable.animation_frames_128x128" |
     "variable.animation_frames_32x32" |

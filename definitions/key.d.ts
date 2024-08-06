@@ -1,3 +1,6 @@
+/**
+ * @since 2.0.0
+ */
 declare const enum KeyCode {
     None = 0,
     Back = 8,

@@ -1,7 +1,11 @@
+/**
+ * @since 2.0.0
+ */
 type NativeType = "void" | "float32" | "float64" | "int32" | "int64";
 
 /**
  * A class representing a native DLL.
+ * @since 2.0.0
  */
 declare class NativeModule {
     /**
@@ -11,11 +15,13 @@ declare class NativeModule {
      * 
      * This method is restricted to prevent cheating.
      * @param moduleName The module name, e.g. `"User32.dll"`
+     * @since 2.0.0
      */
     static get(moduleName: string): NativeModule | null;
 
     /**
      * The current handle of the module. Warning: will be truncated to Float64
+     * @since 2.0.0
      */
     readonly handle: number;
 
@@ -31,6 +37,7 @@ declare class NativeModule {
      * @param functionName The procedure name.
      * @param returnType The return type that is expected.
      * @param args Arguments to pass to the function. The maximum arguments is 15.
+     * @since 2.0.0
      */
     public call(functionName: string, returnType: NativeType, ...args: any[]): number | undefined;
 }
