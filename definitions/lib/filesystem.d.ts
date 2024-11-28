@@ -1,6 +1,12 @@
 declare namespace include {
     export interface Filesystem {
         /**
+         * 
+         * @param path The path of the file
+         */
+        delete(path: string): void;
+
+        /**
          * Reads a file asynchronously.
          * @param path The path to read from.
          * @param callback This will get called when the operation is finished
@@ -45,5 +51,11 @@ declare namespace include {
          * @param data The data to append, for example, `util.bufferToString("hello")`
          */
         append(path: string, data: Buffer): void;
+
+        /**
+         * Gets a list of the contents of a directory.
+         * @param path The path to the directory.
+         */
+        readDirectory(path: string): string[];
     }
 }
