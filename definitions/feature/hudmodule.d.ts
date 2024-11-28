@@ -12,4 +12,7 @@ declare class HudModule extends Module {
 
 declare class TextModule extends HudModule {
     constructor(name: string, displayName: string, description: string, key: KeyCode);
+
+    // Get the last post-processed text that was displayed.
+    getLastText(): string;
 }

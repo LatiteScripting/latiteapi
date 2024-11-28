@@ -52,6 +52,7 @@ interface ClickEvent extends CancellableEvent {
     readonly isDown: boolean;
     readonly mouseX: number;
     readonly mouseY: number;
+    readonly wheelDelta: number;
 }
 
 interface KeyEvent extends CancellableEvent {
