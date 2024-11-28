@@ -233,6 +233,16 @@ interface ClientEvents {
      * Calls whenever the player goes into a different dimension.
      */
     "change-dimension": LatiteEvent;
+
+    /**
+     * Called before movement input is processed. This is cancellable.
+     */
+    "pre-move": CancellableEvent;
+
+    /**
+     * Called after movement input is processed.
+     */
+    "post-move": LatiteEvent;
 }
 
 interface Latite {

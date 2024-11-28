@@ -124,6 +124,20 @@ declare class Entity {
      * @param value The new status flag value.
      */
     setFlag(flag: number, value: boolean): void;
+
+    /**
+     * Gets the entity's movement velocity. 
+     */
+    getVelocity(): Vector3;
+
+
+    /**
+     * Sets the entity's movement velocity. 
+     * 
+     * This function is restricted - it only works if you have operator.
+     * @param vector The new velocity
+     */
+    setVelocity(vector: Vector3): void;
 }
 
 declare class Player extends Entity {
@@ -160,6 +174,16 @@ declare const enum LookingAt {
     Air
 }
 
+interface MovementState {
+    forward: boolean;
+    backward: boolean;
+    left: boolean;
+    right: boolean;
+    jump: boolean;
+    sneak: boolean;
+    readonly sprintHeld: boolean;
+}
+
 declare class LocalPlayer extends Player {
     /**
      * Get the progress of breaking a block (ranging from 0 to 1)
@@ -180,4 +204,16 @@ declare class LocalPlayer extends Player {
      * Get the block selected by looking at it. Will return null if no block is selected.
      */
     getSelectedBlock(): Vector3 | null;
+
+
+    /**
+     * Gets the movement state of the player (i.e. the movement keys held.)
+     */
+    getMovementState(): MovementState;
+
+    /**
+     * Sets the movement state of the player
+     * @param state The state to update to
+     */
+    setMovementState(state: MovementState): void;
 }
