@@ -1,6 +1,6 @@
 {
   "name": "@latitescripting/latiteapi",
-  "version": "2.3.3.1",
+  "version": "2.3.4",
   "description": "API type definitions for Latite Scripting",
   "main": "index.js",
   "type": "module",
