@@ -152,6 +152,15 @@ declare interface Graphics {
      * @param color The overlay color of the texture (defaults to white)
      */
     drawTexture(texture: Texture, pos: Vector2, sizeX: number, sizeY: number, color?: Color): void;
+
+    /**
+     * Draw an item instance.
+     * @param item The item to draw
+     * @param pos The position in pixels to draw the texture
+     * @param sizeModifier The relative size modifier (defualt: 1.0, aka 16 pixels)
+     * @param opacity The opacity of the item
+     */
+    drawItem(item: ItemStack, pos: Vector2, sizeModifier: number, opacity: number): void;
 }
 
 declare const graphics: Graphics;
