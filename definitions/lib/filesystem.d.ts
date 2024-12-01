@@ -57,5 +57,12 @@ declare namespace include {
          * @param path The path to the directory.
          */
         readDirectory(path: string): string[];
+
+        /**
+         * Moves (or renames) files and directories.
+         * @param from Source path
+         * @param to Destination path
+         */
+        move(from: string, to: string): void;
     }
 }
