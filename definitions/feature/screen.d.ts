@@ -39,19 +39,39 @@ declare class Screen {
      * Creates a screen. Must be registered, otherwise leaks may happen.
      * @param name The internal screen name.
      */
-    constructor(name: string);
+    constructor(name: string, key: KeyCode);
 
     /**
      * The name of the screen
      */
     readonly name: string;
 
-    toString(): string;
+    /**
+     * Check if a certain point is hovered (usually by the mouse cursor).
+     * @note Use this instead of doing your own bounds check, because this may prevent clicking through layered UIs.
+     * @param rect The rectangle to check bounds
+     * @param point The point to check (by default, mouse position.)
+     */
+    isHover(rect: Rect, point?: Vector2): boolean;
 
     /**
      * If the screen is currently on or off
      */
     isActive(): boolean;
 
+    /**
+     * Get the key used to activate the screen.
+     */
+    getKey(): KeyCode;
+
+    /**
+     * Set the key used to activate the screen.
+     * @param key The key code to set to
+     */
+    setKey(key: KeyCode): void;
+
     on: <K extends keyof ScreenEvents>(eventName: K, handler: ScreenEvents[K]) => void;
+
+    
+    toString(): string;
 }
