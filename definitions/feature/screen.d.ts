@@ -35,7 +35,11 @@ interface ScreenEvents {
 }
 
 declare class Screen {
-    constructor();
+    /**
+     * Creates a screen. Must be registered, otherwise leaks may happen.
+     * @param name The internal screen name.
+     */
+    constructor(name: string);
 
     /**
      * The name of the setting

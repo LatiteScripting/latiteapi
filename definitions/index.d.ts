@@ -29,7 +29,10 @@
 /// <reference path="./feature/module.d.ts" />
 /// <reference path="./feature/setting.d.ts" />
 /// <reference path="./feature/hudmodule.d.ts" />
+/// <reference path="./feature/screen.d.ts" />
+
 /// <reference path="./feature/manager/mmgr.d.ts" />
 /// <reference path="./feature/manager/commandmgr.d.ts" />
+/// <reference path="./feature/manager/screenmgr.d.ts" />
 
 /// <reference path="./api/TextColor.d.ts" />
