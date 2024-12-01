@@ -10,6 +10,11 @@ declare class Item {
      * The translate name of the item (e.g. `item.stone`)
      */
     public readonly translateName: string; 
+
+    /**
+     * Maximum damage of the item type.
+     */
+    public readonly maxDamage: number;
 }
 
 /**
