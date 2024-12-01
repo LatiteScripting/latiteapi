@@ -52,4 +52,6 @@ declare class Screen {
      * If the screen is currently on or off
      */
     isActive(): boolean;
+
+    on: <K extends keyof ScreenEvents>(eventName: K, handler: ScreenEvents[K]) => void;
 }
