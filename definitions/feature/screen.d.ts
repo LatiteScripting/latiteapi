@@ -42,11 +42,9 @@ declare class Screen {
     constructor(name: string);
 
     /**
-     * The name of the setting
+     * The name of the screen
      */
     readonly name: string;
-    readonly displayName: string;
-    readonly description: string;
 
     toString(): string;
 
