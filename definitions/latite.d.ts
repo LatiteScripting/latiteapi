@@ -279,6 +279,11 @@ interface Latite {
     getCommandManager(): CommandManager;
 
     /**
+     * Gets the screen manager. Use this to register screens.
+     */
+    getScreenManager(): ScreenManager;
+
+    /**
     * The Latite Client version. Example: "v2.0.0"
     */
     readonly version: string;
