@@ -25,7 +25,6 @@ Uint8Array.prototype.readFloat32 = function(idx) {
     return new Float32Array(arrayBuf)[0];
 }
 
-
 Uint8Array.prototype.readFloat64 = function(idx) {
     let thi: Uint8Array = this;
     let arrayBuf = thi.slice(idx, idx + 8);
