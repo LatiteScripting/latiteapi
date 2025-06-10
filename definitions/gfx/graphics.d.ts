@@ -82,7 +82,7 @@ declare class Color {
      * @param b Blue (0 to 255)
      * @param a Opacity (0 to 255)
      */
-    static RGB(r: number, g: number, b: number, a: number | undefined): Color;
+    static RGB(r: number, g: number, b: number, a?: number): Color;
 
     static WHITE: Color;
     static BLACK: Color;
