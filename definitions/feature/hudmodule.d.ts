@@ -2,7 +2,7 @@ declare class HudModule extends Module {
     constructor(name: string, displayName: string, description: string, key: KeyCode, resizable: boolean);
 
     getRect(): Rect;
-    setRect(newRect: Rect): void;
+    setRect(newRect: IRect): void;
     setBounds(width: number, height: number): void;
     getSize(): number;
     setSize(): number;

@@ -137,7 +137,7 @@ declare class Entity {
      * This function is restricted - it only works if you have operator.
      * @param vector The new velocity
      */
-    setVelocity(vector: Vector3): void;
+    setVelocity(vector: IVector3): void;
 }
 
 declare class Player extends Entity {

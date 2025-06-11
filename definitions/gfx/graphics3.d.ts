@@ -17,7 +17,7 @@ declare interface Graphics3D {
      * @param p1 
      * @param p2 
      */
-    drawLine(p1: Vector3, p2: Vector3): void;
+    drawLine(p1: IVector3, p2: IVector3): void;
 
     /**
      * Draws a triangle into the world (adds a triangle into the vertex buffer)
@@ -25,7 +25,7 @@ declare interface Graphics3D {
      * @param p2 
      * @param p3
      */
-    drawTriangle(p1: Vector3, p2: Vector3, p3: Vector3): void;
+    drawTriangle(p1: IVector3, p2: IVector3, p3: IVector3): void;
 
     /**
      * Draws a quad into the world (adds a quad into the vertex buffer)
@@ -34,7 +34,7 @@ declare interface Graphics3D {
      * @param p3
      * @param p4
      */
-    drawQuad(p1: Vector3, p2: Vector3, p3: Vector3, p4: Vector3): void;
+    drawQuad(p1: IVector3, p2: IVector3, p3: IVector3, p4: IVector3): void;
 
     /**
      * Call this every time you're done rendering. (batched renders the current vertex buffer into the world) 

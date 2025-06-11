@@ -52,7 +52,7 @@ declare class Screen {
      * @param rect The rectangle to check bounds
      * @param point The point to check (by default, mouse position.)
      */
-    isHover(rect: Rect, point?: Vector2): boolean;
+    isHover(rect: IRect, point?: IVector2): boolean;
 
     /**
      * If the screen is currently on or off

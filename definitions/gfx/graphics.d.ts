@@ -1,3 +1,19 @@
+declare interface IRect {
+    left: number;
+    top: number;
+    right: number;
+    bottom: number;
+}
+
+declare interface IVector2 {
+    x: number;
+    y: number;
+}
+
+declare interface IVector3 extends IVector2 {
+    z: number;
+}
+
 /**
  * A class representing a rectangle on the screen.
  * @member left The x coordinate of the top-left point.
@@ -5,7 +21,7 @@
  * @member right The x coordinate of the bottom-right point.
  * @member bottom The y coordinate of the bottom-right point.
  */
-declare class Rect {
+declare class Rect implements IRect {
     /**
      * 
      * @param left The x coordinate of the top-left point.
@@ -24,12 +40,13 @@ declare class Rect {
     getHeight(): number;
 }
 
-declare class Vector2 {
-    add: (vec: Vector2) => Vector2;
-    sub: (vec: Vector2) => Vector2;
-    mul: (vec: Vector2) => Vector2;
-    div: (vec: Vector2) => Vector2;
-    distanceTo: (pos: Vector2) => number;
+
+declare class Vector2 implements IVector2 {
+    add: (vec: IVector2) => Vector2;
+    sub: (vec: IVector2) => Vector2;
+    mul: (vec: IVector2) => Vector2;
+    div: (vec: IVector2) => Vector2;
+    distanceTo: (pos: IVector2) => number;
     /**
      * A point on the screen.
      * @param x The x coordinate.
@@ -42,15 +59,20 @@ declare class Vector2 {
     y: number;
 }
 
-declare class Vector3 {
-    add: (vec: Vector3) => Vector3;
-    sub: (vec: Vector3) => Vector3;
-    mul: (vec: Vector3) => Vector3;
-    div: (vec: Vector3) => Vector3;
-    distanceTo: (pos: Vector3) => number;
+declare class Vector3 implements IVector3 {
+    add: (vec: IVector3) => Vector3;
+    sub: (vec: IVector3) => Vector3;
+    mul: (vec: IVector3) => Vector3;
+    div: (vec: IVector3) => Vector3;
+    distanceTo: (pos: IVector3) => number;
 
     constructor(x: number, y: number, z: number);
+
+    /**
+     * Create a `Vector3` object with all fields initialized to `0`
+     */
     constructor();
+
     x: number;
     y: number;
     z: number;
@@ -105,22 +127,20 @@ declare const enum VerticalAlignment {
 
 type BackendType 
     = 
-    /**
-     *  */
-    "dx";
+    "dx" | "minecraft";
 
 declare interface Graphics {
     /**
      * 
      * @param renderer `"dx"`: uses Direct2D/DirectWrite, `"minecraft":` use the Minecraft renderer
      */
-    use(renderer: "dx" | "minecraft"): void;
-    drawRect(rect: Rect, color: Color, thickness: number, radius?: number): void;
-    fillRect(rect: Rect, color: Color, radius?: number): void;
+    use(renderer: BackendType): void;
+    drawRect(rect: IRect, color: Color, thickness: number, radius?: number): void;
+    fillRect(rect: IRect, color: Color, radius?: number): void;
 
     getTextSize(text: string, textSize: number): Vector2;
 
-    setClippingRect(rect: Rect): void;
+    setClippingRect(rect: IRect): void;
     restoreClippingRect(): void;
 
     /**
@@ -130,7 +150,7 @@ declare interface Graphics {
      * @param size The size of the text in pixels
      * @param color The color of the text
      */
-    drawText(pos: Vector2, text: string, size: number, color: Color): void;
+    drawText(pos: IVector2, text: string, size: number, color: Color): void;
 
     /**
      * A full verison of drawText, where you can specify the bounds of the text and the alignment
@@ -141,7 +161,7 @@ declare interface Graphics {
      * @param alignment The horizontal alignment
      * @param verticalAlignment The vertical alignment
      */
-    drawTextFull(area: Rect, text: string, size: number, color: Color, alignment: TextAlignment, verticalAlignment: VerticalAlignment): void;
+    drawTextFull(area: IRect, text: string, size: number, color: Color, alignment: TextAlignment, verticalAlignment: VerticalAlignment): void;
 
     /**
      * Draws a texture.
@@ -151,7 +171,7 @@ declare interface Graphics {
      * @param sizeY The size of the texture in pixels
      * @param color The overlay color of the texture (defaults to white)
      */
-    drawTexture(texture: Texture, pos: Vector2, sizeX: number, sizeY: number, color?: Color): void;
+    drawTexture(texture: Texture, pos: IVector2, sizeX: number, sizeY: number, color?: Color): void;
 
     /**
      * Draw an item instance.
@@ -160,7 +180,7 @@ declare interface Graphics {
      * @param sizeModifier The relative size modifier (defualt: 1.0, aka 16 pixels)
      * @param opacity The opacity of the item
      */
-    drawItem(item: ItemStack, pos: Vector2, sizeModifier: number, opacity: number): void;
+    drawItem(item: ItemStack, pos: IVector2, sizeModifier: number, opacity: number): void;
 }
 
 declare const graphics: Graphics;
